@@ -1,0 +1,7 @@
+---
+- name: Minio Server snap
+  community.general.snap:
+    name:
+      - minio
+    channel: edge
+  become: true

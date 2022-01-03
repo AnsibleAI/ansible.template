@@ -1,0 +1,11 @@
+---
+- name: Minio Client snap
+  community.general.snap:
+    name:
+      - minio-mc-nsg
+    channel: edge
+  become: true
+
+- name: shorter alias mc
+  ansible.builtin.shell: snap alias minio-mc-nsg mc
+  become: true
