@@ -1,0 +1,6 @@
+---
+- name: Install python-psutil package
+  apt:
+    name: python3-psutil
+  become: true
+# https://opensource.com/article/18/5/manage-your-workstation-ansible-part-3
