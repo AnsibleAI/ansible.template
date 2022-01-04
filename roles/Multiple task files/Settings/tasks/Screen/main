@@ -5,8 +5,14 @@
     value: "'power'"
     state: present
 
-- name: Screen poweroff time = 15 minutes
+- name: Screen saver idle delay
   community.general.dconf:
     key: "/org/gnome/desktop/session/idle-delay"
     value: "uint32 900"
+    state: present
+
+- name: Screen poweroff time = 15 minutes
+  community.general.dconf:
+    key: "/org/gnome/settings-daemon/plugins/power/sleep-inactive-ac-timeout "
+    value: "3600"
     state: present
