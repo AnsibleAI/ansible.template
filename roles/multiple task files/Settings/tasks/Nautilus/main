@@ -1,0 +1,7 @@
+---
+
+- name: Single click to open Files, Folders
+  community.general.dconf:
+    key: "/org/gnome/nautilus/preferences/click-policy"
+    value: "'single'"
+    state: present

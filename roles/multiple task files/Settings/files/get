@@ -1,0 +1,7 @@
+gsettings list-recursively > 1
+
+# make Changes
+gsettings list-recursively > 2
+
+# compare:
+diff 1 2

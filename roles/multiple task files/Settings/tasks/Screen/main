@@ -1,0 +1,12 @@
+---
+- name: Screen power
+  community.general.dconf:
+    key: "/org/gnome/ControlCenter/last-panel"
+    value: "'power'"
+    state: present
+
+- name: Screen poweroff time = 15 minutes
+  community.general.dconf:
+    key: "/org/gnome/desktop/session/idle-delay"
+    value: "uint32 900"
+    state: present
