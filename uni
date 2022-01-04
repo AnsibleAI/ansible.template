@@ -4,3 +4,5 @@
 
   roles:
   - role: test
+  - role: Distro specific
+  - role: Meta multiple sub roles
