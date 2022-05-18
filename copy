@@ -1,0 +1,1 @@
+cp -r ansible.template/{my,roles,this,uni,ansible.cfg} new-repo
