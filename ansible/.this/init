@@ -1,17 +1,16 @@
 this=ansible/.this
+inventory="test"
 
 copy_template(){
-  cp test/inventory/hosts.template test/inventory/hosts
-  cp test/inventory/hosts ../../hosts
+  cp $inventory/inventory/hosts.template $inventory/inventory/hosts
 }
 
 future_set_host(){
-  . host
-  sed -i "s/localhost/$host/" test/inventory/hosts
+  sed -i "s/localhost/$host/" $inventory/inventory/hosts
 }
 
 set_user(){
-  sed -i "s/ansible_user=me/ansible_user=$USER/" ../../hosts
+  sed -i "s/ansible_user=me/ansible_user=$USER/" $inventory/inventory/hosts
 }
 
 link_template(){
@@ -19,9 +18,14 @@ link_template(){
   ln -srf uni ..
 }
 
+isInThis(){
+  echo use to fix runtime directory location
+  #cd $this
+}
+
 
 main(){
-  cd $this
+  isInThis
   copy_template
 #  future_set_host
   set_user
