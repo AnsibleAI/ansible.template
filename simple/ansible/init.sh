@@ -1,16 +1,16 @@
-inventory=".this/test"
+inventory=".this/"
 
 copy_template(){
-  cp $inventory/inventory/hosts.template $inventory/inventory/hosts
+  cp -r .this/inventory.example .this/inventory
 }
 
 set_user(){
-  sed -i "s/ansible_user=me/ansible_user=$USER/" $inventory/inventory/hosts
+  sed -i "s/ansible_user=me/ansible_user=$USER/" .this/inventory/test/hosts
 }
 
 link_template(){
-  ln -srf .this/ansible.cfg ..
-  ln -srf .this/uni ..
+  ln -srf .this/ansible.cfg .
+  ln -srf .this/uni .
 }
 
 my_optional_feature(){
@@ -19,9 +19,10 @@ my_optional_feature(){
 
 checkLocation(){
   SCRIPTPATH="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
-  # echo $SCRIPTPATH
-  dirname $SCRIPTPATH
   cd $SCRIPTPATH
+
+  # Debug
+  # dirname $SCRIPTPATH
 }
 
 
