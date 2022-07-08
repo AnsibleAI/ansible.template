@@ -1,3 +1,10 @@
+# initial Create:
+createSubmodule(){
+  cd depends
+  git submodule add https://github.com/Unicorn-OS/source.RPMFusion.git
+  cd -
+}
+
 # get submodule:
 git submodule init
 git submodule update
