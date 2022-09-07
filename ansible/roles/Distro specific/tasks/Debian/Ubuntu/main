@@ -1,8 +1,7 @@
 ---
 - name: Install 
-  ansible.builtin.dnf:
-    name:
-      - httpd
-      - mariadb-server
-    state: latest
+  ansible.builtin.apt:
+    pkg:
+    - foo
+    - foo-tools
   become: true
