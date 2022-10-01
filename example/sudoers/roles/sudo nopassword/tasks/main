@@ -1,0 +1,12 @@
+---
+- shell: which intel_gpu_top
+  register: location
+
+- name: Allow intel-gpu-top to run without password
+  become: yes
+  community.general.sudoers:
+    name: allow-intel-gpu-top
+    state: present
+    user: "{{ansible_user}}"
+    commands: "{{location.stdout}}"
+    nopassword: true

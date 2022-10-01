@@ -1,0 +1,7 @@
+---
+- hosts: local
+  vars:
+    sudoers: true
+  roles:
+  - intel_gpu_top
+  - test
