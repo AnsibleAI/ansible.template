@@ -1,12 +1,18 @@
-dependencies(){
+dependency(){
   # get submodule:
   git submodule init
   git submodule update
+}
 
-  # link:
+link(){
+  from=.graph/dependency
   to=ansible/roles/depends
   mkdir -p $to
-  ln -srf ansible/depends/source.RPMFusion/ansible/roles/rpmfusion $to
+  
+  project=source.RPMFusion
+  roles=ansible/roles/*
+  
+  ln -srf $from/$project/$roles $to
 }
 
 install(){
@@ -15,4 +21,4 @@ install(){
   ansible-playbook uni
 }
 
-dependencies
+dependency
