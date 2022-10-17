@@ -1,0 +1,7 @@
+---
+- include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution }}/{{ ansible_distribution_major_version }}'
+  args:
+    apply:
+      become: yes
+
+
