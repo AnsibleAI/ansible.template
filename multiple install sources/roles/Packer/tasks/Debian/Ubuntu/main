@@ -1,0 +1,5 @@
+---
+- include_tasks: {{source}}
+  args:
+    apply:
+      become: yes

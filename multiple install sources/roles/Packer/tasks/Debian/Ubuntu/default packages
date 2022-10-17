@@ -1,0 +1,35 @@
+---
+- name: Print the gateway for each host when defined
+  ansible.builtin.debug:
+    msg: System {{ inventory_hostname }} has gateway {{ ansible_default_ipv4.gateway }}
+
+- name: Install libvirt
+  apt:
+    pkg:
+    - qemu-kvm
+    - libvirt-daemon-system
+    - libvirt-clients
+    - bridge-utils
+  become: true
+
+
+- name: Install Packer for libvirt
+  apt:
+    pkg:
+    - packer
+    -
+  become: true
+
+- name: Install Vagrant for libvirt
+  apt:
+    pkg:
+    - vagrant
+    - vagrant-libvirt
+  become: true
+
+- name: Install Vagrant for LXD
+  apt:
+    pkg:
+    - vagrant
+    - vagrant-lxc
+  become: true
