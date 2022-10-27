@@ -1,0 +1,24 @@
+---
+
+- hosts: guest
+  gather_facts: no
+  vars:
+    vm_name: fedora-lxqt
+  tasks:
+  - name: Start a VM
+    become: true
+    community.libvirt.virt:
+      name: "{{vm_name}}"
+      state: running
+    delegate_to: "{{item}}"
+    loop: "{{ groups['host'] }}"
+
+  - name: Wait for VM to boot
+    ansible.builtin.wait_for_connection:
+      sleep: 10
+
+  - name: Gather facts for first time
+    ansible.builtin.setup:
+
+  - debug:
+      msg: "VM Started!"

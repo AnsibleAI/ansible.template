@@ -1,8 +1,0 @@
----
-
-- hosts: host
-  vars:
-    vm_name: fedora-lxqt
-    share_folder: "/home/me/src"
-  roles:
-  - VirtioFS/share folder

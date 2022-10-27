@@ -1,0 +1,8 @@
+---
+- hosts: host
+  tasks:
+  - set_fact:
+      roles_path: "{{playbook_dir}}/roles"
+
+- name: Start and mount FS in guest
+  ansible.builtin.import_playbook: play/guest

@@ -3,5 +3,7 @@
   gather_facts: no
   vars:
     vm_name: fedora-lxqt
+    mount_on_boot: true
   roles:
   - Hyperion/start and connect
+  - VirtioFS/mount
