@@ -24,5 +24,6 @@ linkExample(){
   ln -srf $default_hosts dev/
 }
 
+pullExample
 makeDefaultInventory
 linkExample
