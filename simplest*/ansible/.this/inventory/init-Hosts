@@ -1,0 +1,17 @@
+default_hosts=/etc/ansible/hosts
+
+makeDefaultInventory(){
+if [ ! -f "$default_hosts" ]; then
+  sudo mkdir -p /etc/anible
+  sudo cp ./.example/hosts $default_hosts
+  sudo chown $USER:$USER $default_hosts
+fi
+}
+
+linkExample(){
+  mkdir -p dev
+  ln -srf $default_hosts dev/
+}
+
+makeDefaultInventory
+lnkExample
