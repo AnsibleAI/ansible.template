@@ -1,14 +1,15 @@
 default_hosts=/etc/ansible/hosts
 example=".example"
 
-source="https://raw.githubusercontent.com/Source-Graph/ansible.template/main/simplest*/ansible/.this/inventory/.example/hosts"
-
 pullExample(){
-if [ ! -f "$example" ]; then
-  mkdir -p $example
-  cd $example
-  wget -c "$source"
-fi
+  source="https://raw.githubusercontent.com/Source-Graph/ansible.template/main/simplest/ansible/.this/inventory/.example/hosts"
+
+  if [ ! -d "$example" ]; then
+    mkdir -p $example
+    cd $example
+    echo "Pulling Example hosts!"
+    wget -c "$source"
+  fi
 }
 
 makeDefaultInventory(){
