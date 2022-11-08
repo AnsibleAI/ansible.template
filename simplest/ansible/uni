@@ -5,5 +5,4 @@
     source: "package"
 
   roles:
-  - hello
-  - world
+  - App/default

@@ -1,4 +1,4 @@
 ---
 dependencies:
-- this/install
-- this/confg
+- App/install
+- App/config
