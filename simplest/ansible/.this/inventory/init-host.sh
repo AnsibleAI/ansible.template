@@ -14,7 +14,7 @@ pullExample(){
 
 makeDefaultInventory(){
 if [ ! -f "$default_hosts" ]; then
-  sudo mkdir -p /etc/anible
+  sudo mkdir -p /etc/ansible
   sudo cp ./.example/hosts $default_hosts
   sudo chown $USER:$USER $default_hosts
 fi
