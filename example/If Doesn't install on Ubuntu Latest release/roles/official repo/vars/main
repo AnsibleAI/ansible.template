@@ -1,0 +1,6 @@
+---
+
+Fedora_Beta: 37
+
+ubuntu_latest_supported_codename: "jammy"
+ubuntu_latest_supported_ver: 22.04
