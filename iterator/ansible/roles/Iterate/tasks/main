@@ -1,0 +1,16 @@
+---
+- name: Print the gateway for each host when defined
+  ansible.builtin.debug:
+    msg: System {{ inventory_hostname }} has gateway {{ ansible_default_ipv4.gateway }}
+
+- name: Print Folders
+  ansible.builtin.debug:
+    msg: "{{item}}"
+  loop: "{{folder}}"
+
+- name: Folders with Index
+  ansible.builtin.debug:
+    msg: "Folder {{item}} at {{my_idx + 7}}"
+  loop: "{{folder}}"
+  loop_control:
+    index_var: my_idx

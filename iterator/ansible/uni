@@ -1,0 +1,11 @@
+---
+- hosts: local #, fedora, ubuntu
+  vars:
+    somevar: "value"
+    source: "package"
+    folder:
+      - src
+      - bot
+
+  roles:
+  - Iterate
