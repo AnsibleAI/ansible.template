@@ -1,0 +1,5 @@
+cp my.default my
+
+vm_name=ubuntu22.10
+virsh domifaddr $vm_name
+
