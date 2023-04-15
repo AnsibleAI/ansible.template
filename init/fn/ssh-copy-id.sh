@@ -1,8 +1,13 @@
 # graph https://www.baeldung.com/linux/ssh-copy-id-automate
-cd fn
+main(){
+    cd fn
+    source install/sshpass.sh
+    copy_sshkey_to_node
+    cd -
+}
 
-source install/sshpass.sh
+copy_sshkey_to_node(){
+    sshpass -p "$init_password" ssh-copy-id $host
+}
 
-# sshpass –p "$init_password" ssh-copy-id $host
-
-cd -
+main

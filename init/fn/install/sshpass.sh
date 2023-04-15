@@ -1,34 +1,24 @@
 main(){
     if ! sshpass &> /dev/null
     then
-        # install_sshpass
-        try
+        install_sshpass
     fi
 }
 
 install_sshpass(){
-    # Distro
-    Ubuntu=`lsb_release -a | grep Ubuntu`
-
-
-    if ! 
-    then
-        sudo apt install sshpass -y
-    else ! lsb_release -a | grep Fedora
-        sudo dnf install sshpass
-    fi
-}
-
-try(){
-    # Distro
+   # Distro
     (lsb_release -a | grep Ubuntu)
     Ubuntu=$?
     (lsb_release -a | grep Fedora)
     Fedora=$?
 
-    echo Hello
-    echo $Ubuntu
-    echo $Fedora
+    if [ $Ubuntu -eq 0 ]
+    then
+        sudo apt install sshpass -y
+    elif [ $Fedora -eq 0 ]
+    then
+        sudo dnf install sshpass
+    fi
 }
 
 main
