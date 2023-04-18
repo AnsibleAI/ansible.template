@@ -1,8 +1,8 @@
 if test -f node; then
-	source node
+	source inventory/node
 	source fn/ssh-copy-id.sh
 else
-	cp node.example node
+	cp inventory/node.example inventory/node
 	echo "add your hosts to ./node and rerun!"
 	exit
 fi
