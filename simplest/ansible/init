@@ -1,7 +1,5 @@
-this=`pwd`
-cd .this/inventory
+cd .this/inventory/
+cp -r .example test
+cd -
 
-sh init-host.sh
-cd $this
-
-ansible-playbook uni
+echo "inventory/test" >.this/.gitignore
