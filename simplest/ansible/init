@@ -1,5 +1,11 @@
+setup_inventory(){
 cd .this/inventory/
-cp -r .example test
-cd -
+
+# Copy .example to test if it doesn't exist
+[ ! -d "test" ] && cp -r .example test
 
 echo "inventory/test" >.this/.gitignore
+
+cd -
+
+ansible -m ping test
