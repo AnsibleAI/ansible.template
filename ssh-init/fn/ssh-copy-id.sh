@@ -7,7 +7,7 @@ main(){
 }
 
 copy_sshkey_to_node(){
-    sshpass -p "$init_password" ssh-copy-id $host
+    sshpass -p "$init_password" ssh-copy-id $user@$host
 }
 
 main
