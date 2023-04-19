@@ -5,8 +5,9 @@ role="Snapcraft"
 
 link_dependency(){
   dir=".dependency"
-  ansible_dir="ansible/roles/dependency"
+  ansible_dir="ansible/roles/.dependency"
   cd ..
+  mkdir $ansible_dir
   ln -srf $dir/$package/ansible/roles/$role ansible/roles/.dependency/
 }
 
