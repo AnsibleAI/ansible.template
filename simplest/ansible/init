@@ -1,13 +1,16 @@
 setup_inventory(){
+echo "inventory/test" >.this/.gitignore
+
 # Copy .example to test if it doesn't exist
 cd .this/inventory/
 [ ! -d "test" ] && cp -r .example test
-echo "inventory/test" >.this/.gitignore
 cd -
 }
 
 update(){
-ansible-playbook update.yml
+if [ -f "update.yml" ]; then
+    ansible-playbook update.yml
+fi
 }
 
 test(){
