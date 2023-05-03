@@ -1,3 +1,11 @@
+dependency(){
+if [[ -d dependency ]]; then
+cd dependency
+./init
+cd -
+fi
+}
+
 setup_inventory(){
 echo "inventory/test" >.this/.gitignore
 
@@ -18,9 +26,10 @@ ansible -m ping test
 }
 
 main(){
+dependency
 setup_inventory
 update
-test
+#test
 }
 
 main
