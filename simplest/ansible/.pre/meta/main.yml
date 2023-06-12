@@ -1,0 +1,4 @@
+---
+dependencies:
+- .pre/galaxy
+- .pre/dependency
