@@ -1,4 +1,4 @@
-- name: gitignore dependencies
+- name: gitignore dependency
   ansible.builtin.lineinfile:
     path: "{{role_path}}/.gitignore"
     regexp: "^{{depends}}"
@@ -8,9 +8,21 @@
 - name: Git checkout
   ansible.builtin.git:
     repo: "{{item.repo}}"
-    dest: "{{item.subdir}}{{item.name}}"
+    dest: "{{git_dir}}/{{item.name}}"
     update: false
   loop: "{{repo}}"
 
-- debug:
-    msg: "{{role_path}}, {{playbook_dir}}"
+- name: create dirs
+  ansible.builtin.file:
+    path: "{{item}}"
+    state: directory
+  loop:
+  - "{{role_dir}}"
+  - "{{artifact_dir}}"
+
+- name: Link dependency roles
+  ansible.builtin.file:
+    src: "{{git_dir}}/{{item.name}}/{{item.path}}"
+    dest: "{{role_dir}}/{{item.name}}"
+    state: link
+  loop: "{{role}}"
