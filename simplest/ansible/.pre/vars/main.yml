@@ -1,3 +1,6 @@
+# Inventory
+static_inventory: ".pre/inventory/test/hosts"
+
 # Names
 depends: ".depends"
 role_depends: "role"
