@@ -13,8 +13,6 @@
     path: "{{role_path}}/ansible.cfg"
     create: true
     block: |
-      Match User ansible-agent
-      PasswordAuthentication no
       [defaults]
       inventory = {{dynamic_inventory}}
       roles_path = {{role_dir}}
