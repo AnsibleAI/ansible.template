@@ -22,7 +22,7 @@
 
 - name: Link dependency roles
   ansible.builtin.file:
-    src: "{{git_dir}}/{{item.name}}/{{item.path}}"
+    src: "{{git_dir}}/{{item.git}}/{{item.path}}"
     dest: "{{role_dir}}/{{item.name}}"
     state: link
   loop: "{{role}}"
