@@ -5,3 +5,6 @@
     - foo
     - foo-tools
   become: true
+
+- debug:
+    msg: "{{ ansible_distribution_major_version }}"
