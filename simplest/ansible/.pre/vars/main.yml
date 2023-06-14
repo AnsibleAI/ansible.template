@@ -1,0 +1,6 @@
+depends: ".depends"
+depends_dir: "{{role_path}}/{{depends}}/"
+
+repo: [
+  { subdir: "{{depends_dir}}", repo: "git@github.com:Source-Graph/AndroidStudio.git", name: "AndroidStudio"},
+  ]
