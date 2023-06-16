@@ -1,9 +1,0 @@
----
-- hosts: node
-  gather_facts: yes
-
-  roles:
-  - role: .my
-  - role: this
-  - role: optional
-  - role: kvm

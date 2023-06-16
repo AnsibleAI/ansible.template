@@ -1,5 +1,0 @@
-cd ..
-
-ansible-playbook this/pre/uni
-
-cd -

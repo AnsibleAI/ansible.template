@@ -1,6 +1,0 @@
----
-- hosts: node
-  gather_facts: yes
-
-  roles:
-  - role: example.depends on
