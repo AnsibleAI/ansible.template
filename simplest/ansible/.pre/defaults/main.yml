@@ -1,10 +1,12 @@
 # Change this file to add dependency artifacts, repos, & roles!
 repo: [
   { repo: "git@github.com:Source-Graph/AndroidStudio.git", name: "AndroidStudio"},
+  { repo: "git@github.com:Unicorn-OS/Uni.os.default.git", name: "Uni.os.default"},
   ]
 
 role: [
   { git: "AndroidStudio", name: "AndroidStudio", path: "src/ansible/roles/AndroidStudio"},
+  { git: "Uni.os.default", name: "Uni.os.default", path: "src/ansible/roles/uni"},
   ]
 
 
