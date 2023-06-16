@@ -4,7 +4,7 @@ repo: [
   ]
 
 role: [
-  { git: "Uni.os.default", name: "Uni.os.default", path: "src/ansible/roles/uni"},
+  { git: "Uni.os.default", name: "uni", path: "src/ansible/roles/uni"},
   ]
 
 
