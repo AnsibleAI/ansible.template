@@ -7,6 +7,9 @@ role: [
   { git: "Uni.os.default", name: "uni", path: "src/ansible/roles/uni"},
   ]
 
+library: [
+  { git: "getGPU", name: "get_gpu.py", path: "src/ansible/library"},
+  ]
 
 # set Inventory
 dynamic_inventory: "{{static_inventory}}"
