@@ -1,4 +1,3 @@
----
 # pull in .pre dependencies
 - hosts: localhost
   roles:
