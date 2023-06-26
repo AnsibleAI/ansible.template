@@ -7,6 +7,7 @@
       { subdir: "{{stor}}", repo: "git@github.com:UniStor/MinIO.git", name: "MinIO"},
       { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/LXD.hyperion.git", name: "LXD.hyperion"},
       { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/VirtualDisplay.git", name: "VirtualDisplay"},
+      { subdir: "{{stor}}", repo: "git@github.com:UniStor/MinIO.git", name: "MinIO"},
       ]
   tasks:
   - debug:

@@ -1,11 +1,36 @@
+# Use:
+#   ansible-playbook ava.yml --tags dev
+#   ansible-playbook ava.yml --tags test
+#   ansible-playbook ava.yml --tags prod
+# Or all:
+#   ansible-playbook ava.yml --tags dev, test, prod
+
+#--------------------------------------------
+# Get repos
 - name: dev.yml
-  ansible.builtin.import_playbook: dev.yml
-  tags: simba
+  ansible.builtin.import_playbook: git/dev.yml
+  tags: [dev, never]
 
 - name: test.yml
-  ansible.builtin.import_playbook: test.yml
-  tags: simba
+  ansible.builtin.import_playbook: git/test.yml
+  tags: [test, never]
 
 - name: prod.yml
-  ansible.builtin.import_playbook: prod.yml
-  tags: simba
+  ansible.builtin.import_playbook: git/prod.yml
+  tags: [prod, never]
+#--------------------------------------------
+
+# Init:
+# has to be run again so that git repos are found.
+- name: init/dev.yml
+  ansible.builtin.import_playbook: init/dev.yml
+  tags: [devinit, never]
+
+- name: init/test.yml
+  ansible.builtin.import_playbook: init/dev.yml
+  tags: [testinit, never]
+
+- name: init/prod.yml
+  ansible.builtin.import_playbook: init/dev.yml
+  tags: [prodinit, never]
+#--------------------------------------------
