@@ -1,0 +1,23 @@
+- name: library.Simba
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/library.Simba/src/ansible/pre.yml"
+  tags: simba
+
+- name: library.Simba uni()
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/library.Simba/src/ansible/uni.yml"
+  tags: simba
+
+- name: engine.Simba
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/engine.Simba/src/install/ansible/pre.yml"
+  tags: engine
+ 
+- name: engine.Simba prod()
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/engine.Simba/src/install/ansible/uni.yml"
+  tags: engine
+
+- name: game.Runescape
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/game.Runescape/src/x86/ansible/pre.yml"
+  tags: [ game, runsecape ]
+
+- name: game.Runescape dev()
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/game.Runescape/src/x86/ansible/dev.yml"
+  tags: [ game, runsecape ]

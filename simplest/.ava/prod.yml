@@ -1,15 +1,33 @@
-# init is not needed if you're only running on localhost!
-# - hosts: localhost #, fedora, ubuntu
-#   vars:
-#     # Host_vars
-#     ansible_become_password: u
-#     ansible_user: "{{lookup('ansible.builtin.env', 'USER')}}"
-#   roles:
-#   - App
+# Use:
+# ansible-playbook prod.yml --tags pre
+# ansible-playbook prod.yml --tags init
 
-- name: engine.Simba .pre
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/engine.Simba/src/install/ansible/pre.yml"
-  
-- name: engine.Simba prod()
-  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/engine.Simba/src/install/ansible/uni.yml"
-  
+- hosts: localhost
+  tags: [ pre, git]
+  vars:
+    src: ""
+    uni: ".uni"
+    bot: "bot/"
+    stor: "{{uni}}/stor/"
+    vm: "{{uni}}/vm/"
+    repo: [
+      { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/game.Runescape.git", name: "game.Runescape"},
+      { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/engine.Simba.git", name: "engine.Simba"},
+      { subdir: "{{src}}", repo: "git@github.com:MetaBotAI/library.Simba.git", name: "library.Simba"},
+      ]
+
+# Future
+      # { subdir: "{{stor}}", repo: "git@github.com:UniStor/MinIO.git", name: "MinIO"},
+      # { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/LXD.hyperion.git", name: "LXD.hyperion"},
+      # { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/VirtualDisplay.git", name: "VirtualDisplay"},
+
+  tasks:
+  - debug:
+      msg: "{{item.name}}"
+    loop: "{{repo}}"
+
+  - name: Git checkout
+    ansible.builtin.git:
+      repo: "{{item.repo}}"
+      dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/{{item.subdir}}{{item.name}}"
+    loop: "{{repo}}"

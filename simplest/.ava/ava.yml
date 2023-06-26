@@ -2,6 +2,7 @@
 # **Todo**: Make it automatically get {{name}} from {{repo}} using regex! This way I don't need an extra name field.
 - hosts: localhost
   vars:
+    src: ""
     stor: ".uni/stor/"
     vm: ".uni/vm/"
     repo: [
