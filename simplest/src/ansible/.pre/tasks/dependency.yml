@@ -1,8 +1,8 @@
 - name: .gitignore dependency
   ansible.builtin.lineinfile:
-    path: "{{role_path}}/.gitignore"
-    regexp: "^{{depends}}"
-    line: "{{depends}}"
+    path: "{{playbook_dir}}/.gitignore"
+    regexp: "^.pre/{{depends}}"
+    line: ".pre/{{depends}}"
     create: true
 
 - name: git checkout
