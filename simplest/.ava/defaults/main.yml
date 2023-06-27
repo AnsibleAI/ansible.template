@@ -1,0 +1,2 @@
+home_dir: "src/.uni"
+depends: ["git@github.com:Unicorn-OS/Vagrant.git"]
