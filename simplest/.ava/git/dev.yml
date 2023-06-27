@@ -3,10 +3,12 @@
   vars:
     src: ""
     uni: ".uni/"
+    build: "{{uni}}build/"
     ava: "{{uni}}ava/"
     bot: "bot/"
     vm: "{{uni}}vm/"
     repo: [
+      { subdir: "{{build}}", repo: "git@github.com:Source-Graph/GitHubActions.Self-hosted.git", name: "GitHubActions.Self-hosted"},
       { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/Runescape.graph.git", name: "Runescape.graph"},
       { subdir: "{{bot}}", repo: "https://github.com/Villavu/Simba.git", name: "Simba"},
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/Pascal.git", name: "Pascal"},
