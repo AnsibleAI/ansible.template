@@ -2,12 +2,12 @@
   tags: [ pre, git]
   vars:
     src: ""
-    uni: ".uni"
-    ava: "{{uni}}/ava/"
+    uni: ".uni/"
+    ava: "{{uni}}ava/"
     bot: "bot/"
-    stor: "{{uni}}/stor/"
-    vm: "{{uni}}/vm/"
+    vm: "{{uni}}vm/"
     repo: [
+      { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/Runescape.graph.git", name: "Runescape.graph"},
       { subdir: "{{bot}}", repo: "https://github.com/Villavu/Simba.git", name: "Simba"},
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/Pascal.git", name: "Pascal"},
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/Pascal.Lazarus-IDE.git", name: "Pascal.Lazarus-IDE"},
@@ -15,7 +15,7 @@
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/PyCharm.Community.git", name: "PyCharm.Community"},
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/VisualStudioCode.git", name: "VisualStudioCode"},
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/VSCode.Pascal.git", name: "VSCode.Pascal"},
-      { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/Vagrant.git", name: "Vagrant"},
+      { subdir: "{{uni}}", repo: "git@github.com:Source-Graph/ansible.template.git", name: "ansible.template"},
       ]
 
   tasks:

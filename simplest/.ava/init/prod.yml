@@ -9,3 +9,7 @@
 
 - name: game.Runescape dev()
   ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/bot/game.Runescape/src/x86/ansible/dev.yml"
+
+- name: MetaBot dependencies
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/metabotAI/src/ansible/uni.yml"
+  tags: prod
