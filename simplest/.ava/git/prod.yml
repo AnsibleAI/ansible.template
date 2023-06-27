@@ -11,8 +11,10 @@
     stor: "{{uni}}/stor/"
     vm: "{{uni}}/vm/"
     repo: [
+      # Master Repo
+      { subdir: "{{src}}", repo: "git@github.com:MetaBotAI/MetaBot.git", name: "MetaBot"},
+      #
       { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/game.Runescape.git", name: "game.Runescape"},
-      { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/engine.Simba.git", name: "engine.Simba"},
       { subdir: "{{src}}", repo: "git@github.com:MetaBotAI/library.Simba.git", name: "library.Simba"},
       ]
 

@@ -14,6 +14,7 @@
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/CodeBlocks.git", name: "CodeBlocks"},
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/PyCharm.Community.git", name: "PyCharm.Community"},
       { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/VisualStudioCode.git", name: "VisualStudioCode"},
+      { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/VSCode.Pascal.git", name: "VSCode.Pascal"},
       { subdir: "{{vm}}", repo: "git@github.com:Unicorn-OS/Vagrant.git", name: "Vagrant"},
       ]
 
