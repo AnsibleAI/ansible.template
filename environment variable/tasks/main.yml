@@ -1,0 +1,2 @@
+- name: Set environment variable
+  include_tasks: environment variable.yml
