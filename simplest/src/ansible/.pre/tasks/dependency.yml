@@ -9,7 +9,7 @@
   ansible.builtin.git:
     repo: "{{item.repo}}"
     dest: "{{git_dir}}/{{item.name}}"
-    update: false
+    update: "{{git_fetch_updates}}"
   loop: "{{repo}}"
 
 - name: create dirs
