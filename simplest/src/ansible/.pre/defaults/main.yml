@@ -1,3 +1,5 @@
+Vagrant: false
+
 # Change this file to add dependency artifacts, repos, & roles!
 repo: [
   { repo: "git@github.com:Unicorn-OS/Uni.os.default.git", name: "Uni.os.default"},
