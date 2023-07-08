@@ -1,2 +1,2 @@
-home_dir: "src/.uni"
-depends: ["git@github.com:Unicorn-OS/Vagrant.git"]
+home_dir: "src/vpn"
+depends: ["git@github.com:UnicornVPN/VPN.index.git"]

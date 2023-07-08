@@ -1,32 +1,20 @@
 - hosts: localhost
-  tags: [ pre, git]
   vars:
     src: ""
     uni: ".uni/"
-    build: "{{uni}}build/"
-    ava: "{{uni}}ava/"
-    bot: "bot/"
-    vm: "{{uni}}vm/"
+    vpn: "vpn/"
+    bitgraph: "{{uni}}bitgraph/"
     repo: [
-      { subdir: "{{build}}", repo: "git@github.com:Source-Graph/GitHubActions.Self-hosted.git", name: "GitHubActions.Self-hosted"},
-      { subdir: "{{bot}}", repo: "git@github.com:MetaBotAI/Runescape.graph.git", name: "Runescape.graph"},
-      { subdir: "{{bot}}", repo: "https://github.com/Villavu/Simba.git", name: "Simba"},
-      { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/Pascal.git", name: "Pascal"},
-      { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/Pascal.Lazarus-IDE.git", name: "Pascal.Lazarus-IDE"},
-      { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/CodeBlocks.git", name: "CodeBlocks"},
-      { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/PyCharm.Community.git", name: "PyCharm.Community"},
-      { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/VisualStudioCode.git", name: "VisualStudioCode"},
-      { subdir: "{{ava}}", repo: "git@github.com:Source-Graph/VSCode.Pascal.git", name: "VSCode.Pascal"},
-      { subdir: "{{uni}}", repo: "git@github.com:Source-Graph/ansible.template.git", name: "ansible.template"},
+      { subdir: "{{bitgraph}}", repo: "git@github.com:BitGraph/MariaDB.git", name: "MariaDB"},
+      { subdir: "{{vpn}}", repo: "git@github.com:UnicornVPN/VPN.index.git", name: "VPN.index"},
+      { subdir: "{{vpn}}", repo: "git@github.com:Source-Graph/JupyterNotebook.ide.git", name: "JupyterNotebook.ide"},
+      { subdir: "{{vpn}}", repo: "git@github.com:Uni-AI/WebScraper.AI.git", name: "WebScraper.AI"},
       ]
 
   tasks:
-  - debug:
-      msg: "{{item.name}}"
-    loop: "{{repo}}"
-
   - name: Git checkout
     ansible.builtin.git:
       repo: "{{item.repo}}"
       dest: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/{{item.subdir}}{{item.name}}"
+      update: false
     loop: "{{repo}}"
