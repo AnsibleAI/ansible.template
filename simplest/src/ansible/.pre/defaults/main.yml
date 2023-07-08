@@ -20,4 +20,4 @@ dynamic_inventory: "{{static_inventory}}"
 test_inventory: true
 
 # dependencies
-git_fetch_updates: true
+git_fetch_update: true
