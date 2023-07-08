@@ -1,0 +1,5 @@
+ansible.cfg
+.pre/.depends
+.pre/.depends/*
+.pre/files/inventory/test
+library
