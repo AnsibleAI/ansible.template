@@ -2,11 +2,11 @@ vagrant: true
 
 # Change this file to add dependency artifacts, repos, & roles!
 repo: [
-  { repo: "git@github.com:Unicorn-OS/Uni.os.default.git", name: "Uni.os.default"},
+  { repo: "https://github.com/Unicorn-OS/Apt-cacher.pkg.git", name: "Apt-cacher.pkg"},
   ]
 
 role: [
-  { git: "Uni.os.default", name: "uni", path: "src/ansible/roles/uni"},
+  { git: "Apt-cacher.pkg", name: "AptCacherNg", path: "src/ansible/roles/AptCacherNg"},
   ]
 
 library: [
