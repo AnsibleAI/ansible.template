@@ -1,36 +1,16 @@
-# Use:
-#   ansible-playbook ava.yml --tags dev
-#   ansible-playbook ava.yml --tags test
-#   ansible-playbook ava.yml --tags prod
-
-#--------------------------------------------
 # Get repos
-- name: dev.yml
-  ansible.builtin.import_playbook: git/dev.yml
-  tags: [dev, never]
+- name: git.yml
+  ansible.builtin.import_playbook: fn/git.yml
 
-- name: test.yml
-  ansible.builtin.import_playbook: git/test.yml
-  tags: [test, never]
+# Pre
+- name: JupyterNotebook.ide( pre )
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/vpn/JupyterNotebook.ide/src/ansible/pre.yml"
 
-- name: prod.yml
-  ansible.builtin.import_playbook: git/prod.yml
-  tags: [prod, never]
+- name: WebScraper.AI( pre )
+  ansible.builtin.import_playbook: "{{ lookup('ansible.builtin.env', 'HOME') }}/src/vpn/WebScraper.AI/src/ansible/pre.yml"
 
-#--------------------------------------------
-# Init submodules
+# Init
 - hosts: localhost
   tasks:
-  - name: init/dev.yml
-    ansible.builtin.shell: ansible-playbook init/dev.yml
-    tags: [dev, never]
-
-  - name: init/test.yml
-    ansible.builtin.shell: ansible-playbook init/test.yml
-    tags: [test, never]
-
-  - name: init/prod.yml
-    ansible.builtin.shell: ansible-playbook init/prod.yml
-    tags: [prod, never]
-
-# Debug: This is not going to have any output. Run them individually by hand if you need to debug!
+  - name: Init submodule git.yml
+    ansible.builtin.shell: ansible-playbook fn/init.yml
