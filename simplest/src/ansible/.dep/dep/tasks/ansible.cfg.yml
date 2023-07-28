@@ -13,7 +13,7 @@
     create: true
     block: |
       [defaults]
-      inventory = {{dynamic_inventory}}
+      # inventory = {{dynamic_inventory}}
       roles_path = {{role_dir}}
 
 - name: link ansible.cfg
