@@ -5,6 +5,7 @@ depends: "{{dep_home}}/{{mirror}}"
 
 # Folder
 depend_dir: "{{playbook_dir}}/{{depends}}"
+submodule_dir: "{{ansible_env.HOME}}/src/submodule"
 
 # SubFolders
 artifact_dir: "{{depend_dir}}/artifact"
