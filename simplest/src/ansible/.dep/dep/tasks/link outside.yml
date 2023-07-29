@@ -9,4 +9,4 @@
     src: "{{git_dir}}/{{item.name}}"
     dest: "{{submodule_dir}}/{{item.name}}"
     state: link
-  loop: "{{role}}"
+  loop: "{{repo}}"
