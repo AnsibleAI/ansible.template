@@ -1,8 +1,11 @@
 - name: .gitignore all
   ansible.builtin.lineinfile:
     path: "{{playbook_dir}}/{{dep_home}}/.gitignore"
-    line: "*"
+    line: "{{item}}"
     create: true
+  loop:
+  - "*"
+  - "hosts"
 
 - name: .gitignore !keep
   ansible.builtin.lineinfile:
