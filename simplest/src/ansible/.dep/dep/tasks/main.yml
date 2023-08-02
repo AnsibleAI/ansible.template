@@ -1,6 +1,7 @@
 - ansible.builtin.include_tasks: ansible.cfg.yml
 - ansible.builtin.include_tasks: dependency.yml
 - ansible.builtin.include_tasks: gitignore.yml
+- ansible.builtin.include_tasks: hosts.yml
 - ansible.builtin.include_tasks: link outside.yml
 
 
