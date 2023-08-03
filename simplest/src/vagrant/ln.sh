@@ -1,5 +1,5 @@
-ln -srf ../../../ansible/roles .
+ln -srf ../../../ansible .
 
-ln -srf ../../../ansible/.dep .
+ln -srf ../../.gitignore .
 
 ln -srf ../../vagrant.yml .
