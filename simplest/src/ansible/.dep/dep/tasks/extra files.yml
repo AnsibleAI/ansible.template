@@ -1,0 +1,14 @@
+- name: Touch extra files
+  ansible.builtin.file:
+    path: "{{item}}"
+    state: touch
+  loop: "{{extra_files_touch}}"
+  when: (extra_files_touch is defined) and (extra_files_touch|length > 0)
+
+
+# - name: Copy extra files
+#   ansible.builtin.copy:
+#     src: "{{item.src}}"
+#     dest: "{{item.dest}}"
+#     remote_src: yes
+#   loop: extra_files_copy
