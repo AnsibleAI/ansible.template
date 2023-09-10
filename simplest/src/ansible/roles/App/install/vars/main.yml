@@ -1,0 +1,5 @@
+filename: platform-tools-latest-linux
+
+url: "https://dl.google.com/android/repository/{{ filename }}.zip"
+
+dir: /opt/android-dev
