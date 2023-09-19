@@ -1,0 +1,40 @@
+- name: test Silverblue 0
+  command: which rpm-ostree
+  register: rpm_ostree_exists
+  changed_when: false
+  failed_when: false
+
+
+- name: test Silverblue 1
+  command: which dnf
+  register: dnf_exists
+  changed_when: false
+  failed_when: false
+
+- name: Is Silverblue?
+  ansible.builtin.set_fact:
+    Silverblue: "{{ true if (rpm_ostree_exists.rc == 0 and dnf_exists.rc == 1) else false }}"
+  changed_when: false
+
+- name: Silverblue specific tasks
+  ansible.builtin.include_tasks: Silverblue.yml
+  when: Silverblue
+
+- when: not Silverblue
+  block:
+    - name: Normal RPM install
+      debug:
+        msg: Is normal install!
+
+    - name: Install 
+      ansible.builtin.dnf:
+        name:
+          - httpd
+          - mariadb-server
+        state: latest
+      become: true
+
+    - name: for specific version
+      include_tasks:
+        file: "{{ ansible_distribution_major_version }}.yml"
+      when: "{{ ansible_distribution_major_version in [38,37,36] }}"
