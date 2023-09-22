@@ -1,4 +1,4 @@
-source: "pkg"
+install_source: "default"
 
 alt_repo_manager: false
 
