@@ -1,2 +1,8 @@
 - name: OS specific
   include_tasks: '{{ ansible_os_family }}/{{ ansible_distribution }}/main.yml'
+  when: source == "pkg"
+
+- name: Specific source
+  ansible.builtin.include_role:
+    name: "App/install/{{ source }}"
+  when: not source == "pkg"
