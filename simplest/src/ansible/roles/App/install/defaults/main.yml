@@ -1,1 +1,5 @@
+install_source: "default"
+
+alt_repo_manager: false
+
 ubuntu_default: snap
