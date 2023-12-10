@@ -1,0 +1,17 @@
+- name: Idempotent directory
+  ansible.builtin.file:
+    path: "{{ deploy_log | dirname }}"
+    state: directory
+    owner: "{{ ansible_env.USER }}"
+    group: "{{ ansible_env.USER }}"
+  become: true
+  notify: Idempotent deploy.log
+
+- name: Idempotent deploy.log
+  ansible.builtin.file:
+    path: "{{ deploy_log }}"
+    state: touch
+
+# Run last --------------
+- name: Reboot
+  include_tasks: tasks/fn/reboot.yml # https://stackoverflow.com/questions/71578834/using-block-in-handler-ansible

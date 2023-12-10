@@ -1,0 +1,8 @@
+- name: grub2-mkconfig
+  ansible.builtin.shell: grub2-mkconfig > /boot/grub2/grub.cfg
+  args:
+    creates: "{{ deploy_log }}"
+  become: true
+  notify:
+  - Idempotent directory
+  - Reboot
