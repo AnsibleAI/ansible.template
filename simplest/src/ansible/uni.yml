@@ -1,5 +1,7 @@
 - hosts: localhost #, fedora, ubuntu
   vars:
+    debug: True
+    # debug_breakpoint: True
     ansible_become_password: u
 
   roles:

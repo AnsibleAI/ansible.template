@@ -1,6 +1,3 @@
-- debug:
-    msg: "cloning {{ repo_name }}"
-
 - name: Create a directory
   ansible.builtin.file:
     path: "{{ src_dir }}"
@@ -10,3 +7,4 @@
   ansible.builtin.git:
     repo: "{{ this_git_repo }}"
     dest: "{{ repo_dir }}"
+  notify: run Ansible
