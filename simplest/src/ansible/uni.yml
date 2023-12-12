@@ -4,4 +4,6 @@
 
   roles:
   - App
-  - test Functions
+  - .test Functions
+  - in:/container
+  - .test/start
