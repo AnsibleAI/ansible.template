@@ -1,5 +1,3 @@
 - name: Reboot test
-  debug:
-    msg: "Going to Reboot after this!"
+  ansible.builtin.shell: echo "Going to Reboot after this!"
   notify: Reboot
-
