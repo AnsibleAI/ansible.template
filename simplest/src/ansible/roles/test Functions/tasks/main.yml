@@ -1,5 +1,5 @@
-- name: Reboot # https://stackoverflow.com/questions/71578834/using-block-in-handler-ansible
-  ansible.builtin.include_role:
-    name: .fn
-    tasks_from: reboot
+- name: Reboot test
+  debug:
+    msg: "Going to Reboot after this!"
+  notify: Reboot
 
