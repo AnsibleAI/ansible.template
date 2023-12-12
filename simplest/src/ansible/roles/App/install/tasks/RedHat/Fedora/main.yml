@@ -5,7 +5,7 @@
   failed_when: false
 
 - name: Silverblue specific tasks
-  ansible.builtin.include_tasks: Silverblue.yml
+  ansible.builtin.include_tasks: rpm-ostree.yml
   when: rpm_ostree_exists.rc == 0
 
 - name: not Silverblue
