@@ -1,4 +1,2 @@
 dependencies:
-- .dep/psutil
-- App/install
-- App/init
+- .fn/reboot-handler
