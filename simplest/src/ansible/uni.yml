@@ -1,9 +1,9 @@
 - hosts: localhost #, fedora, ubuntu
   vars:
-    debug: True
-    # debug_breakpoint: True
     ansible_become_password: u
-
+  vars_files:
+    - vars/Env.yml
+    - vars/debug.yml
   roles:
   - App
   - .test Functions
