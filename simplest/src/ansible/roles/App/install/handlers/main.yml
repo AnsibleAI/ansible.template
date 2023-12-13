@@ -13,7 +13,8 @@
     state: touch
 
 # Run last --------------
-- name: Reboot # https://stackoverflow.com/questions/71578834/using-block-in-handler-ansible
-  ansible.builtin.include_role:
-    name: .fn
-    tasks_from: reboot
+- name: Install Ansible
+  include_tasks: handle/install Ansible.yml
+
+- name: run Ansible
+  include_tasks: handle/run Ansible.yml
