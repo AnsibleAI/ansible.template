@@ -1,6 +1,6 @@
 - hosts: localhost #, fedora, ubuntu
   vars:
-    ansible_become_password: u
+    foo: "bar"
   vars_files:
     - vars/Env.yml
     - vars/debug.yml
