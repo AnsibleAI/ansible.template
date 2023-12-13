@@ -1,4 +1,3 @@
 ---
 dependencies:
-- role: .fn/reboot
-- "in:/default"
+- .fn/reboot-handler
