@@ -1,5 +1,0 @@
-[localhost]
-
-[localhost:vars]
-ansible_become_password=u
-ansible_connection=local
