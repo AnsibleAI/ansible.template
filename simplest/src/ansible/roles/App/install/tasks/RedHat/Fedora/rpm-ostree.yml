@@ -1,3 +1,4 @@
+---
 - name: Install core KVM packages
   community.general.rpm_ostree_pkg:
     name: "{{ item }}"
@@ -11,4 +12,3 @@
   notify:
   - Reboot
   - start the libvirtd service
-
