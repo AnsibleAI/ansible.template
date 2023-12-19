@@ -1,0 +1,31 @@
+---
+- name: Facts
+  ansible.builtin.debug:
+    var: ansible_facts.distribution_major_version
+
+# Keys
+# https://rpmfusion.org/keys
+# works: https://stackoverflow.com/questions/67951832/ansible-importing-gpg-keys-from-rpm-fusion-not-working
+- name: Importing (free) key
+  ansible.builtin.rpm_key:
+    state: present
+    key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-free-fedora-2020
+  become: true
+
+- name: Importing (non-free) key
+  ansible.builtin.rpm_key:
+    state: present
+    key: https://rpmfusion.org/keys?action=AttachFile&do=get&target=RPM-GPG-KEY-rpmfusion-nonfree-fedora-2020
+  become: true
+
+
+# Install
+# https://rpmfusion.org/Configuration
+- name: Install rpmfusion
+  ansible.builtin.dnf:
+    name:
+      - "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-{{ ansible_facts.distribution_major_version }}.noarch.rpm"
+      - "https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-{{ ansible_facts.distribution_major_version }}.noarch.rpm"
+    state: latest
+    validate_certs: no
+  become: true

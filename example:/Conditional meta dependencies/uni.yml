@@ -1,0 +1,5 @@
+- hosts: localhost #, node
+  vars:
+    foo: "bar"
+  roles:
+  - .test depends on
