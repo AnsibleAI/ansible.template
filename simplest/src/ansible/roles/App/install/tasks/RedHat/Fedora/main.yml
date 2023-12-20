@@ -1,3 +1,4 @@
+# Fedora Flavor
 - name: test Silverblue 0
   command: which rpm-ostree
   register: rpm_ostree_exists
