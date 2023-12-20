@@ -2,4 +2,4 @@
   vars:
     foo: "bar"
   roles:
-  - .test depends on
+  - conditional meta dependencies
