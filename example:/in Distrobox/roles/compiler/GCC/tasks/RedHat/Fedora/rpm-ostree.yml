@@ -1,0 +1,9 @@
+- name: Install GNU C++ (g++) Compiler
+  community.general.rpm_ostree_pkg:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - g++
+  become: true
+  notify:
+  - Reboot

@@ -1,0 +1,5 @@
+---
+dependencies:
+  - compiler
+  - Code Blocks/install
+  - Code Blocks/config

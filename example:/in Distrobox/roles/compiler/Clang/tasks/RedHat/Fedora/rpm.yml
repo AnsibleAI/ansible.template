@@ -1,0 +1,7 @@
+---
+- name: Install Clang Compiler
+  ansible.builtin.dnf:
+    name:
+      - clang
+    state: latest
+  become: true

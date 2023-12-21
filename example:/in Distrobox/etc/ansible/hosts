@@ -1,0 +1,15 @@
+# passwordless become in Toolbox
+localhost ansible_connection=local ansible_become_method=su
+
+[test]
+192.168.1.66
+
+[node:children]
+test
+
+[node:vars]
+ansible_python_interpreter=/usr/bin/python3
+ansible_user=me
+ansible_become_password=u
+
+

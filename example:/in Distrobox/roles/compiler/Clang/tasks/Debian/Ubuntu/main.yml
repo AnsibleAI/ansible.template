@@ -1,0 +1,7 @@
+---
+- name: Install Clang Compiler
+  ansible.builtin.apt:
+    pkg:
+    - build-essential
+    - clang
+  become: true

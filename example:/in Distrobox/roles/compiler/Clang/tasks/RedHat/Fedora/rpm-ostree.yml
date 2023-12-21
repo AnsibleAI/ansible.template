@@ -1,0 +1,9 @@
+- name: Install Clang Compiler
+  community.general.rpm_ostree_pkg:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - clang
+  become: true
+  notify:
+  - Reboot

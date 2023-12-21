@@ -1,0 +1,10 @@
+- name: Install Code::Blocks
+  community.general.rpm_ostree_pkg:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - codeblocks
+    - codeblocks-contrib
+  become: true
+  notify:
+  - Reboot

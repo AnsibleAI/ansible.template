@@ -1,0 +1,7 @@
+---
+- name: Install Code::Blocks
+  ansible.builtin.apt:
+    pkg:
+    - codeblocks
+    - codeblocks-contrib
+  become: true
