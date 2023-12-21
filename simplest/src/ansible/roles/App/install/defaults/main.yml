@@ -4,4 +4,6 @@ source: "download"
 
 alt_repo_manager: false
 
-ubuntu_default: snap
+ubuntu_default: Snap
+
+silverblue_default: Flatpak
