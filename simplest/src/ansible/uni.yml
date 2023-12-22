@@ -5,7 +5,7 @@
     - vars/Env.yml
     - vars/debug.yml
   roles:
+  - in Distrobox
   - App
   - .test Functions
-  - in:/container
   - .test/start
