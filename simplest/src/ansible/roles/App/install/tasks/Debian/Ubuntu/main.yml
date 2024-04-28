@@ -1,13 +1,12 @@
 ---
-- include_tasks: "from:/{{ source }}/main.yml"
-  when: in == "native" and not repository
+---
+- name: Ubuntu source
+  include_tasks: "{{ Ubuntu_source }}"/main.yml
+  when: Ubuntu_source != "default"
 
-- name: Install 
-  ansible.builtin.apt:
-    pkg:
-    - htop
-  become: true
-  when: repository
+# old
+# - include_tasks: "from:/{{ source }}/main.yml"
+#  when: in == "native" and not repository
 
-- include_tasks: "common/{{ubuntu_default}}/main.yml"
+#- include_tasks: "common/{{ ubuntu_default }}/main.yml"
 
