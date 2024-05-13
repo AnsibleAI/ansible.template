@@ -1,1 +1,5 @@
-- name: UniInc.Visual-Studio-Code
+---
+- name: UniInc.Rust
+- name: UniInc.OpenCV-Rust
+- name: UniInc.IntelliJ-IDEA-Ultimate
+- name: UniInc.JetBrains-plugin-Rust
