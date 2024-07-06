@@ -1,7 +1,6 @@
 ---
----
 - name: Ubuntu source
-  include_tasks: "{{ Ubuntu_source }}"/main.yml
+  include_tasks: "{{ Ubuntu_source }}/main.yml"
   when: Ubuntu_source != "default"
 
 # old
