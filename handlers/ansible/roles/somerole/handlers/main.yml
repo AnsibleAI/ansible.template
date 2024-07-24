@@ -1,0 +1,6 @@
+---
+- name: Reboot
+  ansible.builtin.include_tasks:
+    file: handler/reboot.yml
+  when: reboot
+
