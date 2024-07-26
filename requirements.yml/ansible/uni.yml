@@ -1,0 +1,9 @@
+- hosts: node
+  vars:
+    devel: true
+    pull: true
+  roles:
+    - UniInc.RocketChat
+    - UniInc.HAProxy-Syslog
+    - UniInc.RocketChat-HAProxy-template
+

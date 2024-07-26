@@ -1,2 +1,0 @@
-# Guide:
-https://www.jeffgeerling.com/blog/2020/ansible-best-practices-using-project-local-collections-and-roles
