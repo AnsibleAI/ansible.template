@@ -1,0 +1,9 @@
+[chromeOS]
+192.168.1.46	ansible_port=2222
+
+[chromeOS:vars]
+ansible_user=me
+ansible_become_password=u
+
+[node:children]
+chromeOS
