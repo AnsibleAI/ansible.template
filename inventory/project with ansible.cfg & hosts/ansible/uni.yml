@@ -1,0 +1,6 @@
+- hosts: chromeOS
+  vars:
+    devel: true
+  roles:
+    - UniInc.Docker
+
