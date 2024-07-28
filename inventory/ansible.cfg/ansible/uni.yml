@@ -1,0 +1,6 @@
+- hosts: node
+  vars:
+    devel: true
+  roles:
+    - UniInc.Docker
+
