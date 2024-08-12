@@ -1,12 +1,12 @@
 ---
 roles:
-  - name: geerlingguy.java
-    version: 1.9.7
+- name: geerlingguy.java
+  version: 1.9.7
 
-  - name: geerlingguy.docker
-
-  - name: UniInc.Docker
+- geerlingguy.docker
+- UniInc.Docker
+- UniInc.Podman
 
 collections:
-  - name: community.kubernetes
-    version: 0.9.0
+- name: community.kubernetes
+  version: 0.9.0
