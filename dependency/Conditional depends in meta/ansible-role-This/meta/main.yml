@@ -1,0 +1,2 @@
+dependencies:
+  - { role: 'UniInc.RPM-Fusion', when: ansible_os_family == 'RedHat' }
