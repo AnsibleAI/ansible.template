@@ -1,0 +1,2 @@
+# /etc/ansible/hosts                             
+localhost ansible_connection=local ansible_become_password=u
