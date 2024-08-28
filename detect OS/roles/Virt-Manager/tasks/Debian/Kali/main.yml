@@ -1,0 +1,5 @@
+- name: Install Virt-Manager on Kali
+  ansible.builtin.apt:
+    pkg:
+      - virt-manager
+  become: true

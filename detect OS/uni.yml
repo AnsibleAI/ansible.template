@@ -1,0 +1,8 @@
+- name: install KVM & Virt-Manager
+  hosts: localhost #, node
+  vars:
+    optional_packages: true
+
+  roles:
+    - Virt-Manager
+    - KVM

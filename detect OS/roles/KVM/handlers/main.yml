@@ -1,0 +1,6 @@
+- name: start the libvirtd service
+  ansible.builtin.systemd:
+    name: libvirtd
+    state: started
+    enabled: true
+  become: true

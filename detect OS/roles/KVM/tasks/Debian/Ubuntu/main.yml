@@ -1,0 +1,5 @@
+- name: Install
+  ansible.builtin.apt:
+    pkg:
+      - "qemu-system{{ debian_arch }}"
+  become: true

@@ -1,0 +1,10 @@
+- name: Install Virt-Manager
+  community.general.rpm_ostree_pkg:
+    name: "{{ item }}"
+    state: present
+  loop:
+  - virt-manager
+  notify:
+  - Reboot
+  become: true
+  when: virt_manager
