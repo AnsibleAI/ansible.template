@@ -9,3 +9,9 @@
 
 #- include_tasks: "common/{{ ubuntu_default }}/main.yml"
 
+- name: Install packages from apt
+  ansible.builtin.apt:
+    pkg:
+    - foo
+    - foo-tools
+  become: true
