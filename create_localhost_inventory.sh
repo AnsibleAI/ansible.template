@@ -1,0 +1,1 @@
+inventory/localhost/create_localhost_inventory.sh
