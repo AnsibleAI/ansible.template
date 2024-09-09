@@ -1,0 +1,9 @@
+---
+#https://aur.archlinux.org/packages/visual-studio-code-bin
+#https://github.com/kewlfft/ansible-aur
+
+- name: Install Microsoft Visual Studio Code from AUR
+  kewlfft.aur.aur:
+    use: yay
+    name:
+      - visual-studio-code-bin
