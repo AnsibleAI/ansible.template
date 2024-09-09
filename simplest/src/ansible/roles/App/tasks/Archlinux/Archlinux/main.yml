@@ -3,4 +3,4 @@
 # https://wiki.archlinux.org/title/Ansible#AUR
 
 - name: OS specific
-  include_tasks: "{{ archlinux_version }}.yml"
+  include_tasks: "{{ archlinux_source }}.yml"
