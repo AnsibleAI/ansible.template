@@ -1,0 +1,15 @@
+in: "native"
+repository: false
+source: "download"
+
+alt_repo_manager: false
+
+Ubuntu_default_source: default #Snap
+
+silverblue_default_source: Flatpak
+
+Zorin_OS_default_source: Flatpak
+
+debug: false
+
+archlinux_source: pkg
