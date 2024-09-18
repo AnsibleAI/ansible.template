@@ -1,7 +1,6 @@
 ---
 - name: Ubuntu source
-  include_tasks: "{{ Ubuntu_source }}/main.yml"
-  when: Ubuntu_source != "default"
+  include_tasks: "source/{{ Ubuntu_source }}.yml"
 
 # old
 # - include_tasks: "from:/{{ source }}/main.yml"
@@ -9,9 +8,3 @@
 
 #- include_tasks: "common/{{ ubuntu_default }}/main.yml"
 
-- name: Install packages from apt
-  ansible.builtin.apt:
-    pkg:
-    - foo
-    - foo-tools
-  become: true
