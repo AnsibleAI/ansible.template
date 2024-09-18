@@ -1,7 +1,9 @@
 ---
-- name: include
-  include_tasks: "{{ item }}"
+- name: Task include
+  include_tasks: "{{ t }}"
   loop:
   - Gnome/main.yml
   - packages/main.yml
   - role after/main.yml
+  loop_control:
+    loop_var: t
