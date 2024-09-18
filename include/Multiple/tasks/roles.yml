@@ -1,0 +1,8 @@
+---
+- name: Roles to run after
+  ansible.builtin.include_role:
+    name: '{{ roleinputvar }}'
+  loop:
+    - UniInc.Gnome-Favorite-Apps
+  loop_control:
+    loop_var: roleinputvar
