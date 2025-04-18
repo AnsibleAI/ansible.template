@@ -1,4 +1,5 @@
-cd roles
+mkdir -p roles/dev
+cd roles/dev 
+echo "*/" > roles/dev/.gitignore
 
-git clone git@github.com:Unicorn-OS/ansible-role-AptCacherNg-Client.git
-ln -srf ansible-role-AptCacherNg-Client depends/UniInc.AptCacherNg-Client
+git clone git@github.com:Uni-Apps/ansible-role-Spotify.git
