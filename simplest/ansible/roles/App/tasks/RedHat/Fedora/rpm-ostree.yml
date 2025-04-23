@@ -1,5 +1,4 @@
 ---
----
 - name: from
   include_tasks: "from:/{{ silverblue_default }}/main.yml"
   when: not silverblue_default == "rpm"
